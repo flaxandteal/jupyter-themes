@@ -70,7 +70,7 @@ def install_theme(name, profile=None, toolbar=False, jupyter=True):
 
         print("Installing %s at %s" % (name, target_path))
         # -- check if theme import is already there, otherwise add it
-        with open(customcss_path, 'r+a') as customcss:
+        with open(customcss_path, 'a') as customcss:
             if not 'theme.css' in ' '.join(customcss.readlines()):
                 customcss.seek(0, os.SEEK_END)
                 customcss.write("\n@import url('theme.css');")
